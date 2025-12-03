@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta name="description" content="Botiquín Digital de Adpsike: Herramientas interactivas de psicología, ejercicios de respiración y guías PDF.">
+    <meta name="author" content="Adpsike">
+    <meta name="copyright" content="Adpsike 2025">
+    <title>Recursos y Botiquín Digital - Adpsike</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="page-recursos">
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">Adpsike</a>
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                <li><a href="recursos.html" class="active-link">Recursos</a></li>
+                <li><a href="index.html#precios">Precios</a></li>
+                <li><a href="index.html#contacto" class="nav-cta">Agenda Ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-content-wrapper">
+                <span class="section-badge hero-badge-glass">Botiquín Digital</span>
+                <h1 class="hero-title-large">Recursos para tu Bienestar</h1>
+                <p class="hero-desc">Un espacio seguro con herramientas interactivas para evaluar, calmar y fortalecer tu mente.</p>
+            </div>
+        </section>
+        <section class="sos-trigger-section">
+            <div class="sos-preview-card">
+                <div class="sos-preview-header">
+                    <span class="sos-icon-small">🆘</span>
+                    <strong>Asistente de Crisis</strong>
+                </div>
+                <div class="sos-symptoms-grid">
+                    <span>• Ataques de Pánico</span>
+                    <span>• Pensamientos Oscuros</span>
+                    <span>• Desconexión / Irrealidad</span>
+                    <span>• Miedo a perder el control</span>
+                </div>
+                <div class="sos-preview-footer">
+                    <span>⏱️ Duración: 2-5 min</span>
+                    <span class="sos-disclaimer">* No reemplaza atención médica</span>
+                </div>
+            </div>
+            <button type="button" id="btn-sos-trigger" class="btn-sos-trigger">
+                ⚡ Calma Rápida (2-5 min)
+            </button>
+            <div class="sos-social-proof">
+                <p>"Lo usé durante un ataque de ansiedad en la madrugada. Me ayudó a bajar el ritmo en 5 minutos." <span class="anon-user">- Usuario Anónimo</span></p>
+            </div>
+        </section>
+        <section class="jar-section">
+            <div class="jar-container">
+                <div class="jar-icon">🍯</div>
+                <div class="jar-content">
+                    <h3>El Tarro de la Calma</h3>
+                    <p>A veces solo necesitamos leer lo correcto en el momento justo.</p>
+                    <div id="jar-display" class="jar-message-box" aria-live="polite" aria-atomic="true">
+                        <span class="placeholder-text">Presiona el botón para recibir un mensaje...</span>
+                    </div>
+                    <button type="button" id="btn-open-jar" class="btn-jar">Abrir una dosis de calma</button>
+                </div>
+            </div>
+        </section>
+        <section class="emotions-section">
+            <div class="section-header">
+                <div class="step-pill pill-purple">Identificación</div>
+                <h2 class="section-title">Nombra tu Emoción</h2>
+                <p class="section-subtitle">Selecciona la burbuja que mejor resuene contigo ahora mismo para entender su mensaje.</p>
+            </div>
+            <div class="bubbles-container" id="bubbles-container"></div>
+        </section>
+        <section style="padding: 5rem 2rem;">
+            <div class="section-header">
+                <div class="step-pill pill-orange">Paso 01 <span class="pill-separator">|</span> Auto-Evaluación</div>
+                <h2 class="section-title">¿Cómo te sientes hoy?</h2>
+                <p class="section-subtitle">Herramientas interactivas para identificar tus necesidades emocionales.</p>
+            </div>
+            <div class="services-grid">
+                <div class="tool-card card-orange-theme" id="card-quiz">
+                    <div class="tool-icon-wrapper">
+                        <svg aria-hidden="true" fill="none" stroke="#F97316" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Termómetro de Ánimo</h3>
+                    <p class="tool-desc">Test rápido (PHQ-4) para detectar signos leves de ansiedad o depresión.</p>
+                    <button type="button" class="btn-tool btn-orange" id="btn-text-quiz">Iniciar Mini Test</button>
+                    <div id="content-quiz" class="tool-content">
+                        <div class="quiz-item">
+                            <span class="quiz-label">1. ¿Te has sentido nervioso(a)?</span>
+                            <div class="quiz-options" data-question="1">
+                                <button type="button" class="option-btn" data-val="0">Nunca</button>
+                                <button type="button" class="option-btn" data-val="1">A veces</button>
+                                <button type="button" class="option-btn" data-val="2">A menudo</button>
+                                <button type="button" class="option-btn" data-val="3">Siempre</button>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <span class="quiz-label">2. ¿No puedes dejar de preocuparte?</span>
+                            <div class="quiz-options" data-question="2">
+                                <button type="button" class="option-btn" data-val="0">Nunca</button>
+                                <button type="button" class="option-btn" data-val="1">A veces</button>
+                                <button type="button" class="option-btn" data-val="2">A menudo</button>
+                                <button type="button" class="option-btn" data-val="3">Siempre</button>
+                            </div>
+                        </div>
+                        <div id="quiz-result" class="quiz-result-box" aria-live="polite">
+                            <strong class="quiz-result-label">Resultado:</strong> <span id="result-text">...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-card card-green-theme" id="card-load">
+                    <div class="tool-icon-wrapper">
+                        <svg aria-hidden="true" fill="none" stroke="#10B981" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Medidor de Carga</h3>
+                    <p class="tool-desc">Visualiza el peso emocional que estás cargando en este momento.</p>
+                    <button type="button" class="btn-tool btn-green" id="btn-text-load">Medir mi Carga</button>
+                    <div id="content-load" class="tool-content">
+                        <p class="load-question-text">Marca lo que te pesa hoy:</p>
+                        <div class="load-checklist">
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Trabajo</span></button>
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Dinero</span></button>
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Salud</span></button>
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Familia</span></button>
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Futuro</span></button>
+                            <button type="button" class="check-item"><div class="check-box-custom"></div> <span>Yo mismo</span></button>
+                        </div>
+                        <div class="load-level-wrapper" aria-live="polite">
+                            <div class="load-level-header">
+                                <span>Nivel de Carga:</span>
+                                <span id="load-text">Baja</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar-fill" id="load-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-card card-purple-theme" id="card-body-scan">
+                    <div class="tool-icon-wrapper">
+                        <svg aria-hidden="true" fill="none" stroke="#8B5CF6" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Escaneo Corporal</h3>
+                    <p class="tool-desc">Alivia la tensión física y reconecta con tu cuerpo en 2 minutos.</p>
+                    <button type="button" class="btn-tool btn-purple" id="btn-open-bodyscan-direct">Iniciar Ejercicio</button>
+                </div>
+            </div>
+        </section>
+        <section class="breathing-section" id="respiracion">
+            <div class="section-header">
+                <div class="step-pill pill-green">Paso 02 <span class="pill-separator">|</span> Calma Inmediata</div>
+                <h2 class="section-title">Regula tu sistema nervioso</h2>
+                <p class="section-subtitle">Sincroniza tu respiración con el círculo. Activa tu "freno biológico" ahora.</p>
+            </div>
+            <div class="breathing-widget-container">
+                <div class="breathe-circle-wrap">
+                    <div class="breathe-aura"></div>
+                    <div class="breathe-circle">
+                        <span id="breatheText" class="breathe-text">INHALA</span>
+                    </div>
+                </div>
+                <div class="breathe-instructions">
+                    <div class="instruction-step"><span class="step-dot dot-in"></span> Inhala (4s)</div>
+                    <div class="instruction-step"><span class="step-dot dot-hold"></span> Retén (2s)</div>
+                    <div class="instruction-step"><span class="step-dot dot-out"></span> Exhala (4s)</div>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 5rem 2rem;">
+            <div class="section-header">
+                <div class="step-pill pill-pink">Paso 03 <span class="pill-separator">|</span> Mantenimiento</div>
+                <h2 class="section-title">Herramientas para llevar</h2>
+                <p class="section-subtitle">Descarga material de apoyo para practicar en casa.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon icon-panic">
+                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3>Guía SOS: Pánico</h3>
+                    <p>3 pasos exactos para detener un ataque de ansiedad en curso.</p>
+                    <a href="recursos/guia-panico.pdf" target="_blank" class="service-link" download>Descargar PDF →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-sleep">
+                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h3>Checklist de Sueño</h3>
+                    <p>Identifica qué hábitos nocturnos te están robando energía.</p>
+                    <a href="recursos/checklist-sueno.pdf" target="_blank" class="service-link" download>Descargar PDF →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-gratitude">
+                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3>Diario de Gratitud</h3>
+                    <p>Entrena a tu cerebro para reducir el sesgo negativo.</p>
+                    <a href="recursos/diario-gratitud.pdf" target="_blank" class="service-link" download>Descargar PDF →</a>
+                </div>
+            </div>
+        </section>
+        <section id="blog" style="background: #F3F4F6;">
+            <div class="section-header">
+                <span class="step-pill pill-purple">Biblioteca</span>
+                <h2 class="section-title">Lecturas Breves y Prácticas</h2>
+                <p class="section-subtitle">Dosis de psicología para entender lo que te pasa.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-anxiety">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Ansiedad</span>
+                        <h3>Ansiedad sin razón aparente</h3>
+                        <p>A veces el cerebro activa la "alarma de incendio" cuando todo está tranquilo. Te explico por qué.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 3 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal1">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-esteem">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Autoestima</span>
+                        <h3>Poner límites no es egoísmo</h3>
+                        <p>Aprender a decir "no" sin sentir culpa es una habilidad vital. Diferencia entre ser bueno y complaciente.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 4 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal2">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-work">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Estrés Laboral</span>
+                        <h3>¿Cansancio normal o Burnout?</h3>
+                        <p>Si el descanso del fin de semana ya no es suficiente, podrías estar "quemado". Identifica las señales.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 5 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal3">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-prod">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Productividad</span>
+                        <h3>Rompe el ciclo de posponer</h3>
+                        <p>La procrastinación no es un problema de gestión de tiempo, es un problema de gestión de emociones. No pospones la tarea porque sea difícil, sino porque te hace sentir algo desagradable (aburrimiento, miedo a fallar, ansiedad).</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 3 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal4">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-rel">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Relaciones</span>
+                        <h3>Discutir sin lastimar</h3>
+                        <p>El conflicto en pareja es inevitable, pero el daño no. Claves de comunicación asertiva.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 4 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal5">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-bg-grow">
+                        <svg aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Crecimiento</span>
+                        <h3>"Siento que soy un fraude"</h3>
+                        <p>El Síndrome del Impostor afecta a personas muy capaces. Aprende a internalizar tus éxitos.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Lectura: 4 min</span>
+                            <button type="button" class="read-more" data-modal-target="modal6">Leer más →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-transparent">
+            <div class="section-header">
+                <a href="https://www.facebook.com/dpsike/reviews" target="_blank" class="section-badge facebook-brand">Comunidad</a>
+                <h2 class="section-title">No estás solo(a)</h2>
+                <p class="mt-4">Únete a nuestra comunidad y ve historias de superación.</p>
+                <a href="https://www.facebook.com/dpsike/reviews" target="_blank" class="btn btn-secondary btn-facebook-outline">Ver Facebook</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Adpsike</h3>
+                <p>Psicólogo profesional comprometido con tu bienestar emocional. Atención personalizada, confidencial y basada en evidencia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <a href="index.html#servicios">Terapia Individual</a>
+                <a href="index.html#servicios">Terapia en Línea</a>
+                <a href="index.html#servicios">Evaluación Psicológica</a>
+                <a href="index.html#servicios">Desarrollo Personal</a>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#precios">Precios</a>
+                <a href="index.html#sobre-mi">Sobre Mí</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📱 +52 449 199 6086</p>
+                <p>📍 Aguascalientes, México</p>
+                <p class="whatsapp-small-text">Atención presencial y en línea para todo México</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Adpsike. Todos los derechos reservados. | Servicios profesionales de psicología | <a href="privacidad.html" class="footer-legal-link">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5214491996086?text=Hola,%20quisiera%20agendar" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg aria-hidden="true" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+    </a>
+    <div id="emotion-card-overlay" class="emotion-overlay">
+        <div class="emotion-card">
+            <button type="button" id="close-emotion-btn" class="close-modal-btn" aria-label="Cerrar" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; color: white; background: transparent;">✕</button>
+            <div class="emotion-header" id="emotion-header-bg">
+                <div class="emotion-icon" id="emotion-icon">?</div>
+            </div>
+            <div class="emotion-body">
+                <h3 id="emotion-title">Nombre Emoción</h3>
+                <p id="emotion-desc" class="emotion-description">Descripción...</p>
+                <div class="emotion-tip-box">
+                    <strong>💡 Tip Psicológico:</strong>
+                    <p id="emotion-tip">Consejo...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sos-overlay" class="sos-overlay">
+        <button type="button" id="close-sos-btn" class="btn-sos-close" aria-label="Cerrar SOS">✕</button>
+        <div class="sos-container">
+            <div id="sos-screen-1" class="sos-screen active">
+                <h2 class="sos-title">Asistente de Crisis</h2>
+                <p class="sos-desc">¿Estás teniendo pensamientos de hacerte daño ahora mismo?</p>
+                <div class="sos-btn-group-vertical">
+                    <button type="button" class="btn-sos-option opt-suicide-large" onclick="handleSosChoice('suicide')">
+                        <div class="btn-content-large">
+                            <span class="btn-title-large">💔 SÍ</span>
+                            <span class="btn-subtitle-large">Tengo pensamientos de hacerme daño o no quiero seguir viviendo</span>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-sos-option opt-calm-large" onclick="handleSosChoice('triage-2')">
+                        <div class="btn-content-large">
+                            <span class="btn-title-large">🌊 NO</span>
+                            <span class="btn-subtitle-large">Pero tengo ansiedad, pánico o me siento desconectado</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="sos-screen-triage-2" class="sos-screen">
+                <h2 class="sos-title">¿Qué estás sintiendo?</h2>
+                <p class="sos-desc">Elige la opción que mejor describa tu estado actual para darte la herramienta correcta.</p>
+                <div class="sos-btn-group-vertical">
+                    <button type="button" class="btn-sos-option opt-panic" onclick="handleSosChoice('panic')">
+                        <span>😰 Ataque de Pánico / Ansiedad intensa</span>
+                    </button>
+                    <button type="button" class="btn-sos-option opt-disconnect" onclick="handleSosChoice('disconnect')">
+                        <span>🌫️ Me siento irreal / desconectado (Body Scan)</span>
+                    </button>
+                    <button type="button" class="btn-sos-option opt-risk" onclick="handleSosChoice('risk')">
+                        <span>🚨 Miedo a perder el control (Accidental)</span>
+                    </button>
+                </div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button type="button" class="btn-link-simple" onclick="resetSos()">← Volver</button>
+                </div>
+            </div>
+            <div id="sos-screen-risk" class="sos-screen">
+                <div class="sos-emergency-box">
+                    <h2 class="sos-emergency-title">⚠️ Atención Prioritaria</h2>
+                    <p style="margin-bottom: 1.5rem; color: #7F1D1D;">Tu seguridad es lo más importante. Por favor, contacta a servicios de emergencia ahora mismo.</p>
+                    <a href="tel:911" class="btn-emergency-call">Llamar al 911 (Emergencias)</a>
+                    <a href="tel:8009112000" class="btn-emergency-call" style="background:#0D9488;">Línea de la Vida (800 911 2000)</a>
+                    <hr style="margin: 1.5rem 0; opacity: 0.3;">
+                    <a href="https://wa.me/5214491996086?text=SOS:%20Necesito%20ayuda%20urgente,%20estoy%20en%20crisis." class="btn-emergency-call" style="background:#25D366;">Contactar a Adpsike (WhatsApp)</a>
+                </div>
+                <button type="button" class="btn-sos-option" style="width:100%; justify-content: center;" onclick="resetSos()">Volver</button>
+            </div>
+            <div id="sos-screen-calm-intro" class="sos-screen">
+                <h2 class="sos-title">Estás en un lugar seguro</h2>
+                <p class="sos-desc">Lo que sientes es un pico de ansiedad. Es incómodo, pero <strong>pasará</strong>. Vamos a "aterrizar" tu mente juntos.</p>
+                <button type="button" class="btn-sos-next" onclick="startGrounding()">Comenzar Ejercicio</button>
+            </div>
+            <div id="sos-screen-grounding" class="sos-screen">
+                <div id="grounding-icon" class="grounding-icon">👁️</div>
+                <h2 id="grounding-title" class="sos-title">Mira a tu alrededor</h2>
+                <p id="grounding-text" class="grounding-step-text">Encuentra 5 cosas de color azul</p>
+                <div class="grounding-progress">
+                    <div class="grounding-dot active"></div>
+                    <div class="grounding-dot"></div>
+                    <div class="grounding-dot"></div>
+                    <div class="grounding-dot"></div>
+                    <div class="grounding-dot"></div>
+                </div>
+                <button type="button" class="btn-sos-next" onclick="nextGroundingStep()">Listo, siguiente</button>
+            </div>
+            <div id="sos-screen-bs-intro" class="sos-screen">
+                <h2 class="sos-title">🧘 Vamos a reconectar tu cuerpo</h2>
+                <div class="bs-intro-box">
+                    <p>La disociación es la forma que tiene tu mente de protegerte del estrés.</p>
+                    <p>Este ejercicio te ayudará a <strong>anclarte al presente</strong> usando sensaciones físicas simples.</p>
+                </div>
+                <button type="button" class="btn-sos-next" onclick="startActualBodyScan()">Comenzar Escaneo Corporal</button>
+            </div>
+            <div id="sos-screen-bs-active" class="sos-screen">
+                <h3 class="sos-subtitle-small">Escaneo Corporal SOS</h3>
+                <div class="body-scan-svg-container">
+                    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" class="body-scan-svg" aria-hidden="true">
+                        <path id="svg-head" class="body-path" d="M100,20 C85,20 75,35 75,55 C75,75 85,90 100,90 C115,90 125,75 125,55 C125,35 115,20 100,20 Z" />
+                        <path id="svg-shoulders" class="body-path" d="M85,90 Q100,100 115,90 L140,100 Q150,105 140,120 L130,115 L120,110 L80,110 L70,115 L60,120 Q50,105 60,100 Z" />
+                        <path id="svg-arms" class="body-path" d="M60,120 L40,180 Q35,200 45,210 L50,200 L65,130 M140,120 L160,180 Q165,200 155,210 L150,200 L135,130" />
+                        <path id="svg-torso" class="body-path" d="M70,115 L130,115 L125,200 L75,200 Z" />
+                        <path id="svg-legs" class="body-path" d="M75,200 L70,300 L60,380 L85,380 L90,300 L95,200 M125,200 L130,300 L140,380 L115,380 L110,300 L105,200" />
+                    </svg>
+                </div>
+                <div class="bs-instruction-area" aria-live="polite" aria-atomic="true">
+                    <p id="bs-text-instruction" class="bs-main-text">Prepárate...</p>
+                </div>
+                <div class="bs-progress-dots">
+                    <div class="bs-dot" id="bs-dot-0"></div>
+                    <div class="bs-dot" id="bs-dot-1"></div>
+                    <div class="bs-dot" id="bs-dot-2"></div>
+                    <div class="bs-dot" id="bs-dot-3"></div>
+                    <div class="bs-dot" id="bs-dot-4"></div>
+                </div>
+                <div class="bs-controls">
+                    <button type="button" class="btn-bs-control" id="btn-bs-pause" onclick="togglePause()">⏸ Pausar</button>
+                    <button type="button" class="btn-bs-control" onclick="skipBodyScan()">⏩ Saltar</button>
+                </div>
+            </div>
+            <div id="sos-screen-bs-final" class="sos-screen">
+                <div class="bs-success-icon">✅</div>
+                <h2 class="sos-title">Completado</h2>
+                <p class="sos-desc">¿Te sientes más conectado con tu cuerpo ahora?</p>
+                <div class="sos-btn-group-vertical">
+                    <button type="button" class="btn-sos-final btn-sos-final-success" onclick="closeSos()">🌿 Sí, mucho mejor</button>
+                    <button type="button" class="btn-sos-final btn-sos-final-primary" onclick="location.href='https://wa.me/5214491996086?text=Hola,%20acabo%20de%20hacer%20el%20ejercicio%20de%20conexión%20y%20quisiera%20agendar.'">📅 Necesito agendar cita</button>
+                    <button type="button" class="btn-sos-final" style="border:1px solid #ccc; color:#666;" onclick="startActualBodyScan()">🔄 Repetir ejercicio</button>
+                </div>
+            </div>
+            <div id="sos-screen-final" class="sos-screen">
+                <h2 class="sos-title">Lo hiciste muy bien</h2>
+                <p class="sos-desc">Tu respiración debería estar más tranquila ahora. ¿Cómo te sientes?</p>
+                <div class="sos-btn-group-vertical">
+                    <button type="button" class="btn-sos-final btn-sos-final-success" onclick="closeSos()">🌿 Mejor, gracias</button>
+                    <button type="button" class="btn-sos-final btn-sos-final-primary" onclick="location.href='https://wa.me/5214491996086?text=Hola,%20tuve%20una%20crisis%20y%20necesito%20agendar%20cita.'">📅 Necesito agendar cita</button>
+                </div>
+            </div>
+            <div id="sos-screen-suicide-validation" class="sos-screen">
+                <h2 class="sos-title">Gracias por confiar</h2>
+                <p class="sos-desc">Sé que este momento es extremadamente difícil. Lo que sientes es real y merece ser tomado en serio. <strong>No estás solo/a en esto.</strong></p>
+                <ul class="validation-list" style="text-align: left; background: #F0F9FF; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; list-style: none;">
+                    <li style="margin-bottom: 10px;">🛡️ El dolor emocional es tan real como el físico.</li>
+                    <li style="margin-bottom: 10px;">💪 Buscar ayuda es un acto de valentía, no de debilidad.</li>
+                    <li>🤝 Vamos a atravesar esto juntos, paso a paso.</li>
+                </ul>
+                <button type="button" class="btn-sos-next" onclick="startCrisisBreathing()">Continuar</button>
+                <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                    <button type="button" class="btn-link-danger" onclick="handleSosChoice('risk')" style="background:none; border:none; color:#EF4444; text-decoration:underline; cursor:pointer; font-size:0.9rem;">Necesito ayuda inmediata (Saltar ejercicio)</button>
+                </div>
+            </div>
+            <div id="sos-screen-suicide-breathing" class="sos-screen">
+                <h3 class="sos-subtitle-small">Paso 1: Recuperar el control</h3>
+                <h2 class="sos-title">Respira conmigo</h2>
+                <p class="sos-desc">Tu cuerpo está en alerta. Vamos a bajar esa alarma (45 seg).</p>
+                <div class="crisis-breathe-container" style="margin: 2rem auto;">
+                    <div class="crisis-breathe-aura"></div> 
+                    <div class="crisis-breathe-circle" id="crisis-breathe-circle">
+                        <span id="crisis-breathe-text" class="crisis-text">PREPARA</span>
+                    </div>
+                </div>
+                <div class="breathing-dots-container" id="crisis-breathing-dots" style="display: flex; gap: 8px; justify-content: center; margin-bottom: 0.5rem;">
+                    <span class="breath-dot active"></span>
+                    <span class="breath-dot"></span>
+                    <span class="breath-dot"></span>
+                </div>
+                <div style="margin-bottom: 2rem; font-weight: 600; color: #4B5563;">
+                    <span id="crisis-timer-text">Respiración 1 de 3</span>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                    <button type="button" class="btn-sos-next" id="btn-crisis-continue" style="display:none;" onclick="showSuicideReasons()">Continuar</button>
+                    <button type="button" class="btn-link-danger" onclick="showSuicideReasons()" style="background:none; border:none; color:#EF4444; text-decoration:underline; cursor:pointer; font-size:0.95rem; font-weight:600;">No puedo esperar, necesito ayuda inmediata</button>
+                </div>
+            </div>
+            <div id="sos-screen-suicide-reasons" class="sos-screen">
+                <h3 class="sos-subtitle-small">Paso 2: Recordar lo que importa</h3>
+                <h2 class="sos-title">¿Qué te mantiene aquí?</h2>
+                <p class="sos-desc" style="margin-bottom: 1.5rem;">Aunque ahora no lo sientas, hay cosas en tu vida que tienen valor.</p>
+                <div class="reasons-container" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem;">
+                    <div class="reason-item item-blue">
+                        <div class="btn-reason-header">👥 ¿Hay alguien que te extrañaría?</div>
+                        <div class="reason-content-static">
+                            <p style="font-size: 0.95rem; margin-bottom: 10px;">Visualiza su rostro. ¿Qué te diría si estuviera aquí?</p>
+                            <input type="text" class="reason-input" placeholder="Escribe un nombre (opcional)" oninput="enableReasonsNext()">
+                        </div>
+                    </div>
+                    <div class="reason-item item-green">
+                        <div class="btn-reason-header">🏠 ¿Un lugar donde te sientes seguro/a?</div>
+                        <div class="reason-content-static">
+                            <p style="font-size: 0.95rem; margin-bottom: 10px;">¿Puedes recordar cómo te sientes allí?</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tag-suggestion">Tu habitación</span>
+                                <span class="tag-suggestion">Naturaleza</span>
+                                <span class="tag-suggestion">Casa familiar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reason-item item-yellow">
+                        <div class="btn-reason-header">✨ ¿Algo que te hizo sonreír hace poco?</div>
+                        <div class="reason-content-static">
+                            <p style="font-size: 0.95rem; margin-bottom: 10px;">Incluso en la oscuridad, hay destellos. Eso importa.</p>
+                            <input type="text" class="reason-input" placeholder="Ej: Un café, una canción...">
+                        </div>
+                    </div>
+                    <div class="reason-item item-purple">
+                        <div class="btn-reason-header">🌅 ¿Algo que aún no has vivido?</div>
+                        <div class="reason-content-static">
+                            <p style="font-size: 0.95rem;">Estas experiencias te están esperando.</p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-sos-next" id="btn-reasons-next" onclick="showSuicideContract()">Continuar</button>
+            </div>
+            <div id="sos-screen-suicide-contract" class="sos-screen">
+                <h3 class="sos-subtitle-small">Paso 3: Un compromiso pequeño</h3>
+                <h2 class="sos-title" style="margin-bottom: 1rem;">¿Puedes darme 24 horas?</h2>
+                <div class="sos-info-card" style="padding: 1rem; margin-bottom: 1rem;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color:#854D0E;">No es una decisión permanente.</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Solo te pido posponer cualquier acción hasta mañana. El dolor cambiará.</p>
+                </div>
+                <div class="sos-btn-group-vertical" style="gap: 1rem;">
+                    <button type="button" class="btn-sos-option" style="border-color: #10B981; background: #ECFDF5; padding: 1rem;" onclick="finishSuicideModule('agreed')">✅ Sí, puedo esperar 24 horas</button>
+                    <button type="button" class="btn-sos-option" style="padding: 1rem;" onclick="finishSuicideModule('partial')">⏰ No prometo 24h, pero sí las próximas horas</button>
+                    <button type="button" class="btn-sos-option danger" style="padding: 1rem;" onclick="handleSosChoice('risk')">🆘 No puedo esperar, necesito ayuda YA</button>
+                </div>
+            </div>
+            <div id="sos-screen-suicide-final" class="sos-screen">
+                <h2 class="sos-title">No tienes que cargar esto solo/a</h2>
+                <p class="sos-desc">Has dado un paso enorme. Ahora es momento de conectar con apoyo real.</p>
+                <div class="sos-btn-group-vertical" style="gap: 1rem;">
+                    <a href="tel:911" class="btn-sos-final" style="background: #DC2626; color: white; text-decoration: none; display: block; padding: 1.2rem; border-radius: 12px; font-weight: 700;">
+                        🆘 EMERGENCIA INMEDIATA (911)
+                        <span style="display: block; font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Si el riesgo es inminente</span>
+                    </a>
+                    <a href="tel:8009112000" class="btn-sos-final" style="background: #F97316; color: white; text-decoration: none; display: block; padding: 1.2rem; border-radius: 12px; font-weight: 700;">
+                        📞 LÍNEA DE LA VIDA 24/7
+                        <span style="display: block; font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Habla con un especialista ahora</span>
+                    </a>
+                    <a href="https://wa.me/5214491996086?text=SOS%3A%20Acabo%20de%20hacer%20el%20ejercicio%20de%20crisis.%20Necesito%20hablar%20con%20alguien." target="_blank" class="btn-sos-final" style="background: #25D366; color: white; text-decoration: none; display: block; padding: 1.2rem; border-radius: 12px; font-weight: 700;">
+                        💬 CONTACTAR A ADPSIKE
+                        <span style="display: block; font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Escríbeme directamente</span>
+                    </a>
+                </div>
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E5E7EB;">
+                    <p style="font-size: 0.9rem; color: #6B7280; margin-bottom: 1rem;">MIENTRAS TANTO, PUEDES:</p>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <button type="button" class="btn-secondary" style="color: #4B5563; border-color: #D1D5DB; font-size: 0.9rem;" onclick="closeSos()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal1">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Ansiedad</span>
+            <h2 class="article-title">Ansiedad sin razón aparente: La falsa alarma del cerebro</h2>
+            <div class="article-body">
+                <p>¿Alguna vez has sentido una opresión en el pecho o un nerviosismo intenso estando tranquilo en el sofá? No te estás volviendo loco/a. Esto sucede porque tu amígdala cerebral (el centro del miedo) a veces se "descalibra".</p>
+                <h4>¿Por qué sucede?</h4>
+                <p>Imagina un detector de humo que se activa con el vapor de la ducha. Tu cerebro está intentando protegerte, pero está confundiendo señales seguras con peligrosas. El estrés acumulado, la falta de sueño o incluso cambios hormonales pueden dejar este "detector" demasiado sensible.</p>
+                <h4>¿Qué hacer en ese momento?</h4>
+                <p>1. <strong>Nombra lo que sientes:</strong> Di en voz alta "Esto es solo ansiedad, es una falsa alarma".</p>
+                <p>2. <strong>Muévete:</strong> La ansiedad es energía acumulada para "huir". Si te quedas quieto, aumenta. Camina, estírate o sacude las manos.</p>
+                <p>3. <strong>Usa el frío:</strong> Mójate la cara con agua helada. Esto activa el reflejo de inmersión y baja las pulsaciones instantáneamente.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal2">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Autoestima</span>
+            <h2 class="article-title">Poner límites no es egoísmo, es autorespeto</h2>
+            <div class="article-body">
+                <p>A menudo confundimos ser "buena persona" con ser "complaciente". Si sientes culpa cada vez que dices "no", es probable que hayas aprendido que tu valor depende de cuánto ayudas a los demás.</p>
+                <h4>La diferencia clave</h4>
+                <p>El egoísmo es: "Hago lo que quiero sin importarme si te daño".<br>
+                Poner límites es: "Te respeto, pero también me respeto a mí mismo lo suficiente para no dañarme".</p>
+                <h4>Cómo empezar a decir NO</h4>
+                <p>No necesitas dar explicaciones eternas. Prueba estas frases:</p>
+                <ul>
+                    <li>"Gracias por pensar en mí, pero esta vez no podré."</li>
+                    <li>"Tengo la agenda llena esta semana."</li>
+                    <li>"No me siento cómodo con eso."</li>
+                </ul>
+                <p>Al principio sentirás culpa. Es normal. La culpa es el precio de entrada a tu libertad emocional.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal3">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Estrés Laboral</span>
+            <h2 class="article-title">¿Cansancio normal o Burnout? Las 3 señales de alerta</h2>
+            <div class="article-body">
+                <p>Todos nos cansamos después de una semana difícil. Pero el Burnout (síndrome del trabajador quemado) no se cura durmiendo un fin de semana. Es un estado de agotamiento emocional, físico y mental causado por estrés excesivo y prolongado.</p>
+                <h4>Las 3 dimensiones del Burnout</h4>
+                <p><strong>1. Agotamiento Extremo:</strong> Sentir que no puedes dar más, ni física ni emocionalmente. Te levantas ya cansado.</p>
+                <p><strong>2. Cinismo o Despersonalización:</strong> Empiezas a sentirte negativo hacia tu trabajo, clientes o compañeros. Te vuelves frío o distante para protegerte.</p>
+                <p><strong>3. Ineficacia:</strong> Sientes que nada de lo que haces sirve o importa. Te cuesta concentrarte y cometes errores simples.</p>
+                <h4>El primer paso para salir</h4>
+                <p>Reconocerlo. No es "flojera". Necesitas desconexión real (no mirar el mail fuera de hora) y, a veces, una reevaluación de tus condiciones laborales.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal4">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Productividad</span>
+            <h2 class="article-title">Rompe el ciclo de posponer: No es flojera, es miedo</h2>
+            <div class="article-body">
+                <p>La procrastinación no es un problema de gestión de tiempo, es un problema de gestión de emociones. No pospones la tarea porque sea difícil, sino porque te hace sentir algo desagradable (aburrimiento, miedo a fallar, ansiedad).</p>
+                <h4>La técnica de los 5 minutos</h4>
+                <p>Tu cerebro exagera el dolor de empezar. Para engañarlo, haz un trato contigo mismo:</p>
+                <p><em>"Solo haré esto durante 5 minutos. Si después quiero parar, paro."</em></p>
+                <p>Casi siempre, una vez que rompes la inercia inicial, el miedo desaparece y puedes continuar. Lo difícil no es hacer la tarea, es empezarla.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal5">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Relaciones</span>
+            <h2 class="article-title">Discutir sin lastimar: La regla del "Yo siento"</h2>
+            <div class="article-body">
+                <p>En una discusión de pareja, el objetivo no es ganar, es entenderse. El error número uno es usar el "Tú acusatorio".</p>
+                <p>❌ <em>"Tú siempre llegas tarde, no te importo."</em><br>
+                Esto provoca que la otra persona se defienda y ataque de vuelta.</p>
+                <h4>El cambio mágico</h4>
+                <p>Usa la estructura: <strong>Situación + Cómo me siento + Qué necesito.</strong></p>
+                <p>✅ <em>"Cuando llegas tarde a nuestras citas (situación), yo me siento poco valorado y triste (sentimiento). Me gustaría que me avisaras si vas a demorar (necesidad)."</em></p>
+                <p>Es difícil discutir contra un sentimiento. Esto baja las defensas y abre el diálogo.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal6">
+        <div class="modal-card">
+            <button type="button" class="close-modal-btn" aria-label="Cerrar artículo">✕</button>
+            <span class="article-tag">Crecimiento</span>
+            <h2 class="article-title">Síndrome del Impostor: "Siento que soy un fraude"</h2>
+            <div class="article-body">
+                <p>¿Crees que tus logros son por "suerte" y que en cualquier momento descubrirán que no eres tan bueno/a como creen? Bienvenido al club. El 70% de las personas exitosas lo sienten.</p>
+                <h4>Por qué te pasa</h4>
+                <p>Las personas competentes saben cuánto les falta por aprender (Efecto Dunning-Kruger). Tu propia capacidad de ver la complejidad de tu trabajo te hace dudar de ti mismo.</p>
+                <h4>El antídoto: La carpeta de evidencias</h4>
+                <p>Tu cerebro tiende a olvidar tus éxitos. Crea una carpeta (física o digital) donde guardes:</p>
+                <ul>
+                    <li>Correos de felicitación.</li>
+                    <li>Certificados.</li>
+                    <li>Mensajes de agradecimiento.</li>
+                </ul>
+                <p>Cuando te sientas un fraude, abre la carpeta. No son opiniones, son hechos.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
